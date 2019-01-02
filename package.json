@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ibrahimW/weather-app#readme",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "request": "^2.88.0"
   }
 }
