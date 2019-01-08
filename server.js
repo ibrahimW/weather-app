@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 http.createServer(function (req, res) {
   const query = url.parse(req.url, true).query;
   console.log(`Received query address ${query.address}`);
-  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.writeHead(200, {'Content-Type': 'text/html'});
   geocode.geocodeAddress(query.address, (errorMessage, results) => {
     if (errorMessage) {
       console.log(errorMessage);
@@ -19,7 +19,7 @@ http.createServer(function (req, res) {
         if (errorMessage)  {
           console.log(errorMessage);
         } else {
-          res.write(`Its currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.`);
+          res.write(`<br>Its currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.`);
           res.end();
         }
       });
