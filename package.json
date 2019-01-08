@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/ibrahimW/weather-app#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.2.0",
+    "nodemon": "^1.18.9",
     "request": "^2.88.0",
     "yargs": "^4.8.1"
   }
