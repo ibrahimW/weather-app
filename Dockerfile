@@ -1,7 +1,5 @@
 FROM node:10-alpine
 
-PORT 8080
-
 # INSTALL PUPPETEER DEPENDENCIES
 # WARNING - ONLY Allows Puppeteer 1.9.0
 RUN apk update && apk upgrade && \
