@@ -4,8 +4,6 @@ const url = require('url');
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 
-const PORT = process.env.PORT;
-
 http.createServer(function (req, res) {
   const query = url.parse(req.url, true).query;
   console.log(`Received query address ${query.address}`);
@@ -26,4 +24,4 @@ http.createServer(function (req, res) {
     }
   });
 
-}).listen(PORT);
+}).listen(8080);
