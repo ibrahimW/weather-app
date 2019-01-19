@@ -2,7 +2,10 @@ const puppeteer = require("puppeteer");
 const url = "https://darksky.net";
 
 const getWeather = async (lat, lng, callback) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium-browser",
+    args: ['--disable-dev-shm-usage'] // Docker hack to allow /tmp usage
+  });
   try {
     console.log(`Getting weather for ${lat} ${lng}...`);
     const page = await browser.newPage();
